@@ -1,0 +1,20 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bill</title>
+</head>
+<body>
+    <h1>Bill for Order</h1>
+    <h2>Customer Details</h2>
+    <p>Name: {{ customer.name }}</p>
+    <p>Address: {{ customer.locality }}, {{ customer.city }}, {{ customer.state }}</p>
+    <h2>Products</h2>
+    <ul>
+        {% for item in cart_items %}
+            <li>{{ item.product.title }} - Quantity: {{ item.quantity }} - Price: {{ item.total_cost }}</li>
+        {% endfor %}
+    </ul>
+    <h3>Total Amount: {{ total_amount }}</h3>
+</body>
+</html>
